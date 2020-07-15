@@ -1,6 +1,6 @@
 {
   "name": "cypress-circleci-testrail-reporter",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "description": "Cypress Reporter for Testrail integrated with CircleCI",
   "main": "index.js",
   "scripts": {
