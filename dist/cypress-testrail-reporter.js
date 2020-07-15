@@ -23,7 +23,7 @@ var CypressTestRailReporter = /** @class */ (function (_super) {
         _this.results = [];
         var reporterOptions = options.reporterOptions;
         _this.testRail = new testrail_1.TestRail(reporterOptions);
-        _this.hasBeenCreatedToday = false;
+        _this.isRun = false;
         _this.validate(reporterOptions, 'domain');
         _this.validate(reporterOptions, 'username');
         _this.validate(reporterOptions, 'password');
@@ -32,18 +32,11 @@ var CypressTestRailReporter = /** @class */ (function (_super) {
         _this.validate(reporterOptions, 'createTestRun');
         runner.on('start', function () {
             console.log("Running Test Case...");
-            var executionDateTime = moment().format('L');
-            var name = (reporterOptions.runName || 'Automated Test Run') + " - " + executionDateTime;
+            var executionDateTime = moment().format('LLLL');
+            var name = process.env.CIRCLE_PROJECT_REPONAME + " - " + executionDateTime;
             var description = executionDateTime;
-            if (reporterOptions.createTestRun === true) {
-                _this.testRail.isRunToday().then(function (res) {
-                    _this.hasBeenCreatedToday = res;
-                    console.log(_this.hasBeenCreatedToday);
-                    if (!_this.hasBeenCreatedToday) {
-                        _this.testRail.createRun(name, description);
-                    }
-                });
-            }
+            reporterOptions.createTestRun === true && _this.testRail.createRun(name, description);
+
         });
         runner.on('pass', function (test) {
             var _a;
