@@ -1,0 +1,35 @@
+{
+  "name": "cypress-circleci-testrail-reporter",
+  "version": "1.1.0",
+  "description": "Cypress Reporter for Testrail integrated with CircleCI",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Crakmedia-Dev/cypress-circleci-testrail-reporter.git"
+  },
+  "author": "Guillaume Langlois",
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "bugs": {
+    "url": "https://github.com/Crakmedia-Dev/cypress-circleci-testrail-reporter/issues"
+  },
+  "homepage": "https://github.com/Crakmedia-Dev/cypress-circleci-testrail-reporter#readme",
+  "dependencies": {
+    "axios": "^0.18.1",
+    "btoa": "^1.1.2",
+    "chalk": "^2.4.1",
+    "mocha": "^2.2.5",
+    "moment": "^2.22.1"
+  },
+  "devDependencies": {
+    "@types/chai": "^3.4.34",
+    "@types/mocha": "^2.2.36",
+    "@types/node": "^6.0.58",
+    "chai": "^3.5.0",
+    "rimraf": "^2.5.4",
+    "typescript": "^2.1.4"
+  }
+}
